@@ -49,6 +49,7 @@
     {
         KeyManager keyManager = new KeyManager();
         key = keyManager.CreateKey();
+
         StateHasChanged();
     }
 
@@ -56,9 +57,7 @@
     {
         this.hash = HashingService.GenerateHash(this.selectedHmac, this.key, this.text);
     
-        
         StateHasChanged();
-
     }
 
 }

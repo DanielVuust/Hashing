@@ -10,3 +10,5 @@ C:\Users\danie\source\repos\C#\Kryptering\Hashing\HashingDomain\obj\Debug\net6.0
 C:\Users\danie\source\repos\C#\Kryptering\Hashing\HashingDomain\obj\Debug\net6.0\refint\HashingDomain.dll
 C:\Users\danie\source\repos\C#\Kryptering\Hashing\HashingDomain\obj\Debug\net6.0\HashingDomain.pdb
 C:\Users\danie\source\repos\C#\Kryptering\Hashing\HashingDomain\obj\Debug\net6.0\ref\HashingDomain.dll
+C:\Users\danie\source\repos\C#\Kryptering\Hashing\HashingDomain\bin\Debug\net6.0\HashingDomain.runtimeconfig.json
+C:\Users\danie\source\repos\C#\Kryptering\Hashing\HashingDomain\obj\Debug\net6.0\HashingDomain.genruntimeconfig.cache

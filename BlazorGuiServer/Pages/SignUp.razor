@@ -1,0 +1,24 @@
+﻿@using HashingDomain
+@page "/signup"
+
+<h3>SignUp</h3>
+
+@inject LoginManagerService LoginManagerService
+
+
+<input @bind="@Username" />
+<input @bind="@Password" />
+<input @bind="@Email" />
+
+<button @onclick="@SignUpNewUser"></button>
+
+@code {
+    protected string Username;
+    protected string Password;
+    protected string Email;
+
+    private void SignUpNewUser()
+    {
+        LoginManagerService.CreateNewUser(this.Username, this.Password, this.Email);
+    }
+}

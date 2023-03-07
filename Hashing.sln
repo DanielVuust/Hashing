@@ -5,9 +5,9 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hashing", "Hashing\Hashing.csproj", "{32689CAF-5570-41CB-B3CB-4EFB54FADBBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashingDomain", "HashingDomain\HashingDomain.csproj", "{319D8A4A-6B57-46FD-9A86-71A26D88B45E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HashingDomain", "HashingDomain\HashingDomain.csproj", "{319D8A4A-6B57-46FD-9A86-71A26D88B45E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorGuiServer", "BlazorGuiServer\BlazorGuiServer.csproj", "{E762BDB6-A4D6-4042-9280-3E73BA9F7E8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorGuiServer", "BlazorGuiServer\BlazorGuiServer.csproj", "{E762BDB6-A4D6-4042-9280-3E73BA9F7E8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,5 @@
 using BlazorGuiServer.Data;
+using HashingDomain;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
@@ -15,6 +16,8 @@ namespace BlazorGuiServer
             builder.Services.AddServerSideBlazor();
             builder.Services.AddSingleton<WeatherForecastService>();
             builder.Services.AddSingleton<HashingService>();
+            builder.Services.AddSingleton<LoginManagerService>();
+            builder.Services.AddSingleton<SecurePasswordDbContext>();
 
             var app = builder.Build();
 

@@ -23,8 +23,8 @@ namespace Hashing
 
                 Console.WriteLine("Text to encrypt");
                 string? text = Console.ReadLine();
-                Encryptor encryptor = new Encryptor();
-                string encrypedText = encryptor.Encrypt(hmac, key, text);
+                Hasher hasher = new Hasher();
+                string encrypedText = hasher.Hash(hmac, key, text);
 
 
                 DisplayInfo(hashName, text, encrypedText);

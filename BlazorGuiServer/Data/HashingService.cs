@@ -14,8 +14,8 @@ namespace BlazorGuiServer.Data
             {
                 return "error";
             }
-            Encryptor encryptor = new Encryptor();
-            return encryptor.Encrypt(hmac, key, text);
+            Hasher hasher = new Hasher();
+            return hasher.Hash(hmac, key, text);
         }
 
         public List<string> GetSupportedHmacs()
