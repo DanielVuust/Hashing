@@ -1,0 +1,50 @@
+﻿@using global::Hashing
+@using System.Net
+@using System.Security.Cryptography
+@page "/hashing"
+
+<h3>Hashing</h3>
+<p>
+    Key: 
+    @if (key != null)
+    {
+        @Convert.ToBase64String(key);
+    }
+</p>
+<button @onclick="GenerateNewRandomKey">Generate new key</button>
+
+<br/>
+<br/>
+
+<input id="txtWord" name="txtWord" placeholder="Enter your text" 
+       value ="@text" />
+<br/>
+
+<button @onclick="GenerateHash">Generate new key</button>
+
+
+@code {
+    private string text;
+    private byte[] key;
+    private List<string> supportedHmacs;
+    private string selectedHmac;
+    private string hash;
+
+    private void GenerateNewRandomKey()
+    {
+        KeyManager keyManager = new KeyManager();
+        key = keyManager.CreateKey();
+        StateHasChanged();
+    }
+
+    private void GenerateHash()
+    {
+        MacManager macManager = new MacManager();
+        HMAC hmac = macManager.SelectHmac("MD5");
+        Encryptor encryptor = new Encryptor();
+        this.hash = encryptor.Encrypt(hmac, this.key, this.text);
+        StateHasChanged();
+
+    }
+
+}

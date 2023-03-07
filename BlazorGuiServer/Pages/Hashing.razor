@@ -1,0 +1,64 @@
+﻿@using global::Hashing
+@using System.Net
+@using System.Security.Cryptography
+@using BlazorGuiServer.Data
+@page "/hashing"
+@inject WeatherForecastService ForecastService
+@inject HashingService HashingService
+
+<h3>Hashing</h3>
+<p>
+    Key: 
+    @if (key != null)
+     {
+         @Convert.ToBase64String(key);
+     }
+</p>
+<button @onclick="GenerateNewRandomKey">Generate new key</button>
+
+<br/>
+<br/>
+
+<input id="txtWord" name="txtWord" placeholder="Enter your text" 
+       value ="@text" />
+<br/>
+
+<button @onclick="GenerateHash">Generate new key</button>
+<br/>
+<br/>
+<select class="form-control" @bind="@selectedHmac" style="width:150px">
+    @foreach (var template in supportedHmacs)
+    {
+        <option value=@template>@template</option>
+    }
+</select>
+<p>@hash</p>
+
+@code {
+    private string text = "hello mikkel";
+    private byte[] key;
+    private List<string> supportedHmacs = new List<string>();
+    private string selectedHmac;
+    private string hash;
+
+    protected override void OnInitialized()
+    {
+        supportedHmacs = HashingService.GetSupportedHmacs();
+    }
+    private void GenerateNewRandomKey()
+    {
+        KeyManager keyManager = new KeyManager();
+        key = keyManager.CreateKey();
+        StateHasChanged();
+    }
+
+    private void GenerateHash()
+    {
+        this.hash = HashingService.GenerateHash(this.selectedHmac, this.key, this.text);
+    
+        
+        StateHasChanged();
+
+    }
+
+}

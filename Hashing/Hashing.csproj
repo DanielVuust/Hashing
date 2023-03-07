@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HashingDomain\HashingDomain.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="HashingDomain">
+      <HintPath>..\HashingDomain\bin\Debug\net6.0\HashingDomain.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

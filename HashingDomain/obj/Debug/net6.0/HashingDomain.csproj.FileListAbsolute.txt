@@ -1,0 +1,12 @@
+C:\Users\danie\source\repos\C#\Kryptering\Hashing\HashingDomain\bin\Debug\net6.0\HashingDomain.deps.json
+C:\Users\danie\source\repos\C#\Kryptering\Hashing\HashingDomain\bin\Debug\net6.0\HashingDomain.dll
+C:\Users\danie\source\repos\C#\Kryptering\Hashing\HashingDomain\bin\Debug\net6.0\HashingDomain.pdb
+C:\Users\danie\source\repos\C#\Kryptering\Hashing\HashingDomain\obj\Debug\net6.0\HashingDomain.csproj.AssemblyReference.cache
+C:\Users\danie\source\repos\C#\Kryptering\Hashing\HashingDomain\obj\Debug\net6.0\HashingDomain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\source\repos\C#\Kryptering\Hashing\HashingDomain\obj\Debug\net6.0\HashingDomain.AssemblyInfoInputs.cache
+C:\Users\danie\source\repos\C#\Kryptering\Hashing\HashingDomain\obj\Debug\net6.0\HashingDomain.AssemblyInfo.cs
+C:\Users\danie\source\repos\C#\Kryptering\Hashing\HashingDomain\obj\Debug\net6.0\HashingDomain.csproj.CoreCompileInputs.cache
+C:\Users\danie\source\repos\C#\Kryptering\Hashing\HashingDomain\obj\Debug\net6.0\HashingDomain.dll
+C:\Users\danie\source\repos\C#\Kryptering\Hashing\HashingDomain\obj\Debug\net6.0\refint\HashingDomain.dll
+C:\Users\danie\source\repos\C#\Kryptering\Hashing\HashingDomain\obj\Debug\net6.0\HashingDomain.pdb
+C:\Users\danie\source\repos\C#\Kryptering\Hashing\HashingDomain\obj\Debug\net6.0\ref\HashingDomain.dll
