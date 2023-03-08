@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.CodeDom.Compiler;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Hashing
@@ -19,10 +20,16 @@ namespace Hashing
             using var hasher = hmac;
             return Convert.ToBase64String(hasher.ComputeHash(Encoding.UTF8.GetBytes(text)));
         }
-        public string Hash(HashAlgorithm hash, string text)
+        public string Hash(HashAlgorithm hash, string text, int iterations)
         {
             using var hasher = hash;
-            return Convert.ToBase64String(hasher.ComputeHash(Encoding.UTF8.GetBytes(text)));
+            byte[] tempHash = hasher.ComputeHash(Encoding.UTF8.GetBytes(text));
+            for (int i = iterations; i < iterations - 1; i++)
+            {
+                tempHash = hasher.ComputeHash(tempHash);
+            }
+
+            return Convert.ToBase64String(tempHash);
         }
     }
 }

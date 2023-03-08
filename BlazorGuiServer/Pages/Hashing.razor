@@ -1,10 +1,7 @@
-﻿@using global::Hashing
-@using System.Net
-@using System.Security.Cryptography
-@using BlazorGuiServer.Data
-@page "/hashing"
-@inject WeatherForecastService ForecastService
-@inject HashingService HashingService
+﻿@page "/hashing"
+@using BlazorGuiServer.Data.Management.Services
+@using global::Hashing
+@inject CryptographicSecurityService CryptographicSecurityService
 
 <h3>Hashing</h3>
 <p>
@@ -43,7 +40,7 @@
 
     protected override void OnInitialized()
     {
-        supportedHmacs = HashingService.GetSupportedHmacs();
+        supportedHmacs = CryptographicSecurityService.GetSupportedHmacs();
     }
     private void GenerateNewRandomKey()
     {
@@ -55,7 +52,7 @@
 
     private void GenerateHash()
     {
-        this.hash = HashingService.GenerateHash(this.selectedHmac, this.key, this.text);
+        this.hash = CryptographicSecurityService.GenerateHash(this.selectedHmac, this.key, this.text);
     
         StateHasChanged();
     }

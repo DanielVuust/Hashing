@@ -1,5 +1,5 @@
-using BlazorGuiServer.Data;
-using HashingDomain;
+using BlazorGuiServer.Data.Management.Services;
+using BlazorGuiServer.Data.Repository.Model;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
@@ -14,8 +14,14 @@ namespace BlazorGuiServer
             // Add services to the container.
             builder.Services.AddRazorPages();
             builder.Services.AddServerSideBlazor();
-            builder.Services.AddSingleton<WeatherForecastService>();
-            builder.Services.AddSingleton<HashingService>();
+
+            builder.Services.AddLogging(builder => builder
+                .SetMinimumLevel(LogLevel.Debug)
+                .AddFilter("Microsoft", LogLevel.Debug)
+                .AddFilter("System", LogLevel.Debug)
+            );
+
+            builder.Services.AddSingleton<CryptographicSecurityService>();
             builder.Services.AddSingleton<LoginManagerService>();
             builder.Services.AddSingleton<SecurePasswordDbContext>();
 

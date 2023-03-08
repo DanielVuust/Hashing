@@ -9,26 +9,43 @@ namespace Hashing
 {
     public class MacManager
     {
-        private readonly Dictionary<string, HMAC> supportedHmacs = new Dictionary<string, HMAC>()
+        private readonly List<string> supportedHmacs = new List<string>()
         {
-            {"SHA1", new HMACSHA1()},
-            {"MD5", new HMACMD5()},
-            {"SHA256", new HMACSHA256()},
-            {"SHA384", new HMACSHA384()},
-            {"SHA512", new HMACSHA512()},
+            "SHA1",
+            "MD5",
+            "SHA256",
+            "SHA384",
+            "SHA512",
         };
+        
         public HMAC SelectHmac(string hmacName)
         {
-            if (!supportedHmacs.ContainsKey(hmacName))
+            if (hmacName == "SHA1")
             {
-                throw new NotSupportedException($"{hmacName} is not supported");
+                return new HMACSHA1();
             }
-            return supportedHmacs[hmacName];
+            if (hmacName == "MD5")
+            {
+                return new HMACMD5();
+            }
+            if (hmacName == "SHA256")
+            {
+                return new HMACSHA256();
+            }
+            if (hmacName == "SHA384")
+            {
+                return new HMACSHA384();
+            }
+            if (hmacName == "SHA512")
+            {
+                return new HMACSHA512();
+            }
+            throw new NotSupportedException($"{hmacName} is not supported");
         }
 
         public List<String> GetSupportedHmacs()
         {
-            return supportedHmacs.Keys.ToList();
+            return supportedHmacs;
         }
     }
 }

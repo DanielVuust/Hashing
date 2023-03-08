@@ -1,5 +1,6 @@
-﻿@using HashingDomain
-@page "/login"
+﻿@page "/login"
+@using BlazorGuiServer.Data.Management.Services
+@using FluentResults
 
 <h3>Login</h3>
 
@@ -14,29 +15,30 @@
 <p>@DisplayText</p>
 
 @code {
-    protected string Username;
-    protected string Password;
+    protected string? Username;
+    protected string? Password;
     protected string? DisplayText;
     private void TryLogin()
     {
-        if (!LoginManagerService.TryLogin(this.Username, this.Password))
+        Result loginResult = LoginManagerService.TryLogin(this.Username, this.Password);
+        if (loginResult.IsFailed)
         {
-            ShowNotValidLogin();
+            ShowNotValidLogin(loginResult.Errors.First().Message);
             return;
         }
         ShowLoginSuccessful();
     }
 
-    private void ShowLoginSuccessful()
+    private void ShowLoginSuccessful(string text = "Welcome User")
     {
-        this.DisplayText = "Welcome User";
-        //Better state management but is out of scope of hashing assignment so is not added. 
+        this.DisplayText = text;
+
         StateHasChanged();
     }
 
-    private void ShowNotValidLogin()
+    private void ShowNotValidLogin(string text = "Password/Username is not valid")
     {
-        this.DisplayText = "Password/Username is not valid";
+        this.DisplayText = text;
 
         StateHasChanged();
     }
