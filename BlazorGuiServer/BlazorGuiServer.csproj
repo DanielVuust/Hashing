@@ -11,8 +11,4 @@
     <PackageReference Include="FluentResults" Version="3.15.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\HashingDomain\HashingDomain.csproj" />
-  </ItemGroup>
-
 </Project>

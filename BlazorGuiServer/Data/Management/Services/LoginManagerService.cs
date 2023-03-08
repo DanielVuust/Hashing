@@ -38,23 +38,11 @@ namespace BlazorGuiServer.Data.Management.Services
             return result;
         }
 
-        /// <summary>
-        ///     Tries to login for a user with username and password
-        /// </summary>
-        /// <returns>
-        ///     True for successful login, false for everything else
-        /// </returns>
         public Result TryLogin(string? username, string? password)
         {
             TryLoginCommand tryLoginService = new TryLoginCommand(this._context, _loggerFactory, _cryptographicSecurity);
             tryLoginService.AssignVariables(username, password);
-            Result result = tryLoginService.ExecuteWithValidation();
-
-            if (result.IsFailed)
-            {
-                return result;
-            }
-            return Result.Ok();
+            return tryLoginService.ExecuteWithValidation();
         }
         
     }

@@ -1,4 +1,5 @@
-﻿using Hashing;
+﻿using BlazorGuiServer.Data.Management.Services.ServiceHelpers;
+using Hashing;
 using System.Security.Cryptography;
 
 namespace BlazorGuiServer.Data.Management.Services
@@ -17,7 +18,6 @@ namespace BlazorGuiServer.Data.Management.Services
             Hasher hasher = new Hasher();
             return hasher.Hash(hmac, key, text);
         }
-
         public List<string> GetSupportedHmacs()
         {
             MacManager macManager = new MacManager();

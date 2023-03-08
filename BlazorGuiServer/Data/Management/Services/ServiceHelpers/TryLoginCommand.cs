@@ -1,4 +1,5 @@
-﻿using BlazorGuiServer.Data.Repository;
+﻿using System.Diagnostics;
+using BlazorGuiServer.Data.Repository;
 using BlazorGuiServer.Data.Repository.Model;
 using FluentResults;
 using HashingDomain.Model;
@@ -14,7 +15,6 @@ namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
 
         private string? _username;
         private string? _password;
-
 
         public TryLoginCommand(SecurePasswordDbContext context, ILoggerFactory loggerFactory, CryptographicSecurityService cryptographicSecurity)
         {
@@ -41,12 +41,14 @@ namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
             this.Validated = true;
             return Result.Ok();
         }
-
         public override Result Execute()
         {
             this._logger.LogDebug("Calling Execute");
 
-            var userResult = new LoginHelper(_context, _loggerFactory).GetUser(_username!);
+            Debug.Assert(_username != null);
+            Debug.Assert(_password != null);
+
+            var userResult = new LoginHelper(_context, _loggerFactory).GetUser(_username);
 
             if (userResult.IsFailed)
             {
@@ -58,7 +60,7 @@ namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
                 return Result.Fail(new Error("No user found"));
             }
 
-            string hash = _cryptographicSecurity.CreateHashForPassword(_password!, userResult.Value.Salt);
+            string hash = _cryptographicSecurity.CreateHashForPassword(_password, userResult.Value.Salt);
 
             if (hash != userResult.Value.Hash)
             {

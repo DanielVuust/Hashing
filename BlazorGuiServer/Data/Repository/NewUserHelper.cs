@@ -34,7 +34,6 @@ namespace BlazorGuiServer.Data.Repository
                 Hash = hash,
                 Salt = salt,
                 Email = email,
-                HashIterations = hashIterations
             };
 
             _context.Users.Add(user);

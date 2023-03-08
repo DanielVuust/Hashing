@@ -6,11 +6,11 @@
 @inject LoginManagerService LoginManagerService
 
 
-<input @bind="@Username" />
-<input @bind="@Password" />
-<input @bind="@Email" />
+<input @bind="@Username" placeholder="Username"/>
+<input @bind="@Password" placeholder="Password"/>
+<input @bind="@Email" placeholder="Email"/>
 
-<button @onclick="@SignUpNewUser"></button>
+<button @onclick="@SignUpNewUser">Sign Up</button>
 
 @code {
     protected string Username;

@@ -9,8 +9,7 @@
       "BlazorGuiServer/1.0.0": {
         "dependencies": {
           "EntityFramework": "6.4.4",
-          "FluentResults": "3.15.2",
-          "HashingDomain": "1.0.0"
+          "FluentResults": "3.15.2"
         },
         "runtime": {
           "BlazorGuiServer.dll": {}
@@ -244,14 +243,6 @@
             "fileVersion": "4.700.19.56404"
           }
         }
-      },
-      "HashingDomain/1.0.0": {
-        "dependencies": {
-          "EntityFramework": "6.4.4"
-        },
-        "runtime": {
-          "HashingDomain.dll": {}
-        }
       }
     }
   },
@@ -414,11 +405,6 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
-    },
-    "HashingDomain/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

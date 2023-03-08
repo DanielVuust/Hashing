@@ -2,11 +2,11 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Hashing
+namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
 {
+    //Could have been a service, but i decided that as this isn't the first class that called from the GUI layer.
     public class Hasher
     {
-
         /// <summary>
         ///     Creates a hash from hmac type, key and text
         /// </summary>
@@ -24,7 +24,7 @@ namespace Hashing
         {
             using var hasher = hash;
             byte[] tempHash = hasher.ComputeHash(Encoding.UTF8.GetBytes(text));
-            for (int i = iterations; i < iterations - 1; i++)
+            for (int i = 0; i < iterations - 1; i++)
             {
                 tempHash = hasher.ComputeHash(tempHash);
             }

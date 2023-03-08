@@ -24,7 +24,7 @@ namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
             _context = context;
             _cryptographicSecurity = cryptographicSecurity;
         }
-
+        
         public void AssignVariables(string username, string password, string email)
         {
             this._logger.LogDebug("Calling AssignVariables");
@@ -32,8 +32,6 @@ namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
             _username = username;
             _password = password;
             _email = email;
-
-            Validated = true;
         }
 
         public override Result Execute()
