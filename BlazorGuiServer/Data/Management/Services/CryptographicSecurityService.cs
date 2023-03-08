@@ -9,7 +9,7 @@ namespace BlazorGuiServer.Data.Management.Services
 
         public string GenerateHash(string hmacName, byte[] key, string text)
         {
-            MacManager macManager = new MacManager();
+            HmacManager macManager = new HmacManager();
             HMAC hmac = macManager.SelectHmac(hmacName);
             if (hmac == null || key == null || text == null)
             {
@@ -20,7 +20,7 @@ namespace BlazorGuiServer.Data.Management.Services
         }
         public List<string> GetSupportedHmacs()
         {
-            MacManager macManager = new MacManager();
+            HmacManager macManager = new HmacManager();
             return macManager.GetSupportedHmacs();
         }
         public string CreateSalt()

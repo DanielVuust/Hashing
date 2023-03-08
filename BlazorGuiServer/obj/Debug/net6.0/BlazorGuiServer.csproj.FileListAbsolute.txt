@@ -6,8 +6,6 @@ C:\Users\danie\source\repos\C#\Kryptering\Hashing\BlazorGuiServer\bin\Debug\net6
 C:\Users\danie\source\repos\C#\Kryptering\Hashing\BlazorGuiServer\bin\Debug\net6.0\BlazorGuiServer.runtimeconfig.json
 C:\Users\danie\source\repos\C#\Kryptering\Hashing\BlazorGuiServer\bin\Debug\net6.0\BlazorGuiServer.dll
 C:\Users\danie\source\repos\C#\Kryptering\Hashing\BlazorGuiServer\bin\Debug\net6.0\BlazorGuiServer.pdb
-C:\Users\danie\source\repos\C#\Kryptering\Hashing\BlazorGuiServer\bin\Debug\net6.0\HashingDomain.dll
-C:\Users\danie\source\repos\C#\Kryptering\Hashing\BlazorGuiServer\bin\Debug\net6.0\HashingDomain.pdb
 C:\Users\danie\source\repos\C#\Kryptering\Hashing\BlazorGuiServer\obj\Debug\net6.0\BlazorGuiServer.csproj.AssemblyReference.cache
 C:\Users\danie\source\repos\C#\Kryptering\Hashing\BlazorGuiServer\obj\Debug\net6.0\BlazorGuiServer.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\danie\source\repos\C#\Kryptering\Hashing\BlazorGuiServer\obj\Debug\net6.0\BlazorGuiServer.AssemblyInfoInputs.cache
@@ -108,3 +106,5 @@ C:\Users\davu\source\repos\Skole\H3\Kryptering\Hashing\BlazorGuiServer\obj\Debug
 C:\Users\davu\source\repos\Skole\H3\Kryptering\Hashing\BlazorGuiServer\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.BlazorGuiServer.props
 C:\Users\davu\source\repos\Skole\H3\Kryptering\Hashing\BlazorGuiServer\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.BlazorGuiServer.props
 C:\Users\davu\source\repos\Skole\H3\Kryptering\Hashing\BlazorGuiServer\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\danie\source\repos\C#\Kryptering\Hashing\BlazorGuiServer\bin\Debug\net6.0\FluentResults.dll
+C:\Users\danie\source\repos\C#\Kryptering\Hashing\BlazorGuiServer\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll

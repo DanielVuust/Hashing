@@ -2,6 +2,9 @@
 
 namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
 {
+    /// <summary>
+    ///     ValidatedCommand is the same as ICommand but adds the ablity to validate before execution.
+    /// </summary>
     public abstract class ValidatedCommand : ICommand
     {
         protected bool Validated = false;
@@ -11,7 +14,11 @@ namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
 
         public Result ExecuteWithValidation()
         {
-            this.Validate();
+            var result = this.Validate();
+            if (result.IsFailed)
+            {
+                return result;
+            }
             return this.Execute();
         }
 

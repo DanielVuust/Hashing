@@ -20,11 +20,20 @@ namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
             using var hasher = hmac;
             return Convert.ToBase64String(hasher.ComputeHash(Encoding.UTF8.GetBytes(text)));
         }
-        public string Hash(HashAlgorithm hash, string text, int iterations)
+        /// <summary>
+        ///     Create a hash mased on a hash algorithm 
+        /// </summary>
+        /// <param name="hashAlgorithm">The hashAlgorithm used for the hash</param>
+        /// <param name="text">The text the hash is based on</param>
+        /// <param name="hashIterations">The times the hash algorithm should run</param>
+        /// <returns>
+        ///     Returns a hash in base64
+        /// </returns>
+        public string Hash(HashAlgorithm hashAlgorithm, string text, int hashIterations = 1)
         {
-            using var hasher = hash;
+            using var hasher = hashAlgorithm;
             byte[] tempHash = hasher.ComputeHash(Encoding.UTF8.GetBytes(text));
-            for (int i = 0; i < iterations - 1; i++)
+            for (int i = 0; i < hashIterations - 1; i++)
             {
                 tempHash = hasher.ComputeHash(tempHash);
             }

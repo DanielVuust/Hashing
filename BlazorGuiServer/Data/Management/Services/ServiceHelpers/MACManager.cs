@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Hashing
 {
-    public class MacManager
+    public class HmacManager
     {
         private readonly List<string> supportedHmacs = new List<string>()
         {

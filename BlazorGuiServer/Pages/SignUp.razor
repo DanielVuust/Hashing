@@ -5,6 +5,7 @@
 
 @inject LoginManagerService LoginManagerService
 
+@*Note: there is no validation on the input fields*@
 
 <input @bind="@Username" placeholder="Username"/>
 <input @bind="@Password" placeholder="Password"/>
@@ -12,13 +13,32 @@
 
 <button @onclick="@SignUpNewUser">Sign Up</button>
 
+<br/>
+<p>@DisplayText</p>
+
+
 @code {
     protected string Username;
     protected string Password;
     protected string Email;
+    protected string DisplayText;
 
     private void SignUpNewUser()
     {
-        LoginManagerService.CreateNewUser(this.Username, this.Password, this.Email);
+        var result = LoginManagerService.CreateNewUser(this.Username, this.Password, this.Email);
+        if (result.IsFailed)
+        {
+            var errors = result.Errors.Select(x => x.Message);
+
+            this.ChangeDisplayText(string.Join(", ", errors));
+            return;
+        }
+        this.ChangeDisplayText($"User {Username} was successfully created :)");
+    }
+    private void ChangeDisplayText(string text)
+    {
+        this.DisplayText = text;
+
+        StateHasChanged();
     }
 }

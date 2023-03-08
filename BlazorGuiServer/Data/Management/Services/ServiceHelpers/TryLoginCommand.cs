@@ -35,7 +35,8 @@ namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
             this._logger.LogDebug("Calling Validate");
             if (this._username == null || this._password == null)
             {
-                return Result.Fail(new Error("Password or username is null"));
+                this._logger.LogWarning("Username or password is null, missing validation in gui layer");
+                return Result.Fail(new Error("Error, password or username is null"));
             }
 
             this.Validated = true;
@@ -57,14 +58,14 @@ namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
 
             if (userResult.Value == null)
             {
-                return Result.Fail(new Error("No user found"));
+                return Result.Fail(new Error("No user matches credentials"));
             }
 
             string hash = _cryptographicSecurity.CreateHashForPassword(_password, userResult.Value.Salt);
 
             if (hash != userResult.Value.Hash)
             {
-                return Result.Fail(new Error("Wrong password"));
+                return Result.Fail(new Error("No user matches credentials"));
             }
 
             return Result.Ok();

@@ -46,16 +46,7 @@ namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
             string hash = _cryptographicSecurity.CreateHashForPassword(_password, salt);
 
             NewUserHelper helper = new NewUserHelper(_context, _loggerFactory);
-            Result<User> result;
-            try
-            {
-                result = helper.CreateNewUser(_username, hash, _email, salt);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogWarning($"Could not create new user. ex: {ex}");
-                return Result.Fail(new Error("Could not create new user").CausedBy(ex));
-            }
+            Result<User> result = helper.CreateNewUser(_username, hash, _email, salt);
 
             if (result.IsFailed)
                 return Result.Fail(new Error("An error occurred when trying to save new user to db"));
@@ -66,13 +57,23 @@ namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
         {
             this._logger.LogDebug("Calling Validate");
 
-            //Validate input.
             if (string.IsNullOrEmpty(_username) || string.IsNullOrEmpty(_password) || string.IsNullOrEmpty(_email))
             {
                 //passwordText is used for debugging purposes and is hidden if not empty.
                 var passwordText = string.IsNullOrEmpty(_password) ? "null" : "XXXXXXX";
                 _logger.LogWarning($"Username: {_username}, password: {passwordText} and/or email: {_email} is null");
                 return Result.Fail(new Error("Username, password or email is null"));
+            }
+
+            if(this._context.Users.Any(x => x.Username == this._username))
+            {
+                _logger.LogDebug($"Username {this._username} already in use");
+                return Result.Fail(new Error("Username is already in use"));
+            }
+            if (this._context.Users.Any(x => x.Email == this._email))
+            {
+                _logger.LogDebug($"Email {this._email} already in use");
+                return Result.Fail(new Error("Email is already in use"));
             }
 
             Validated = true;
