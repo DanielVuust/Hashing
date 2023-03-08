@@ -4,7 +4,7 @@ using BlazorGuiServer.Data.Repository.Model;
 using FluentResults;
 using HashingDomain.Model;
 
-namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
+namespace BlazorGuiServer.Data.Services.ServiceHelpers
 {
     public class TryLoginCommand : ValidatedCommand
     {
@@ -25,26 +25,26 @@ namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
         }
         public void AssignVariables(string? username, string? password)
         {
-            this._logger.LogDebug("Calling AssignVariables");
+            _logger.LogDebug("Calling AssignVariables");
 
             _username = username;
             _password = password;
         }
         public override Result Validate()
         {
-            this._logger.LogDebug("Calling Validate");
-            if (this._username == null || this._password == null)
+            _logger.LogDebug("Calling Validate");
+            if (_username == null || _password == null)
             {
-                this._logger.LogWarning("Username or password is null, missing validation in gui layer");
+                _logger.LogWarning("Username or password is null, missing validation in gui layer");
                 return Result.Fail(new Error("Error, password or username is null"));
             }
 
-            this.Validated = true;
+            Validated = true;
             return Result.Ok();
         }
         public override Result Execute()
         {
-            this._logger.LogDebug("Calling Execute");
+            _logger.LogDebug("Calling Execute");
 
             Debug.Assert(_username != null);
             Debug.Assert(_password != null);

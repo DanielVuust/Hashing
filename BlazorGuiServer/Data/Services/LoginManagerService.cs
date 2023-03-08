@@ -1,18 +1,8 @@
-﻿using BlazorGuiServer.Data;
-using Hashing;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using BlazorGuiServer.Data.Management.Services.ServiceHelpers;
-using FluentResults;
-using HashingDomain.Model;
-using BlazorGuiServer.Data.Repository;
+﻿using FluentResults;
 using BlazorGuiServer.Data.Repository.Model;
+using BlazorGuiServer.Data.Services.ServiceHelpers;
 
-namespace BlazorGuiServer.Data.Management.Services
+namespace BlazorGuiServer.Data.Services
 {
     internal class LoginManagerService
     {
@@ -40,10 +30,10 @@ namespace BlazorGuiServer.Data.Management.Services
 
         public Result TryLogin(string? username, string? password)
         {
-            TryLoginCommand tryLoginService = new TryLoginCommand(this._context, _loggerFactory, _cryptographicSecurity);
+            TryLoginCommand tryLoginService = new TryLoginCommand(_context, _loggerFactory, _cryptographicSecurity);
             tryLoginService.AssignVariables(username, password);
             return tryLoginService.ExecuteWithValidation();
         }
-        
+
     }
 }

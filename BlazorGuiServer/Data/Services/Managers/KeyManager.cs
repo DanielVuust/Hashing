@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hashing
+namespace BlazorGuiServer.Data.Services.Managers
 {
     public class KeyManager
     {

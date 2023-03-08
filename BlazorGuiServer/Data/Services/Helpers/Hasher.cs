@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
+namespace BlazorGuiServer.Data.Services.Helpers
 {
     //Could have been a service, but i decided that as this isn't the first class that called from the GUI layer.
     public class Hasher

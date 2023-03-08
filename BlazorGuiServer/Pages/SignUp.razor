@@ -1,12 +1,11 @@
 ﻿@page "/signup"
-@using BlazorGuiServer.Data.Management.Services
+@using BlazorGuiServer.Data.Services
 
 <h3>SignUp</h3>
 
 @inject LoginManagerService LoginManagerService
 
-@*Note: there is no validation on the input fields*@
-
+@*Note: there is no validation on the input fields other than in the logic/dal layer*@
 <input @bind="@Username" placeholder="Username"/>
 <input @bind="@Password" placeholder="Password"/>
 <input @bind="@Email" placeholder="Email"/>

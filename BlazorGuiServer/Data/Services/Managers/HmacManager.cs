@@ -5,11 +5,11 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hashing
+namespace BlazorGuiServer.Data.Services.Managers
 {
     public class HmacManager
     {
-        private readonly List<string> supportedHmacs = new List<string>()
+        private readonly List<string> _supportedHmacs = new List<string>()
         {
             "SHA1",
             "MD5",
@@ -17,7 +17,7 @@ namespace Hashing
             "SHA384",
             "SHA512",
         };
-        
+
         public HMAC SelectHmac(string hmacName)
         {
             if (hmacName == "SHA1")
@@ -43,9 +43,9 @@ namespace Hashing
             throw new NotSupportedException($"{hmacName} is not supported");
         }
 
-        public List<String> GetSupportedHmacs()
+        public List<string> GetSupportedHmacs()
         {
-            return supportedHmacs;
+            return _supportedHmacs;
         }
     }
 }

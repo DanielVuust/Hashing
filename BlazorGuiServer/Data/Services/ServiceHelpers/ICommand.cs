@@ -1,6 +1,6 @@
 ﻿using FluentResults;
 
-namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
+namespace BlazorGuiServer.Data.Services.ServiceHelpers
 {
     public interface ICommand
     {

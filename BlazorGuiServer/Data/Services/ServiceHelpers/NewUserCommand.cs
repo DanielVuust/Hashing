@@ -1,11 +1,10 @@
 ﻿using System.Diagnostics;
-using BlazorGuiServer.Data.Management.Services;
 using BlazorGuiServer.Data.Repository;
 using BlazorGuiServer.Data.Repository.Model;
 using FluentResults;
 using HashingDomain.Model;
 
-namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
+namespace BlazorGuiServer.Data.Services.ServiceHelpers
 {
     public class NewUserCommand : ValidatedCommand
     {
@@ -24,10 +23,10 @@ namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
             _context = context;
             _cryptographicSecurity = cryptographicSecurity;
         }
-        
+
         public void AssignVariables(string username, string password, string email)
         {
-            this._logger.LogDebug("Calling AssignVariables");
+            _logger.LogDebug("Calling AssignVariables");
 
             _username = username;
             _password = password;
@@ -40,7 +39,7 @@ namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
             Debug.Assert(_password != null);
             Debug.Assert(_email != null);
 
-            this._logger.LogDebug("Calling Execute");
+            _logger.LogDebug("Calling Execute");
 
             string salt = _cryptographicSecurity.CreateSalt();
             string hash = _cryptographicSecurity.CreateHashForPassword(_password, salt);
@@ -55,7 +54,7 @@ namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
 
         public override Result Validate()
         {
-            this._logger.LogDebug("Calling Validate");
+            _logger.LogDebug("Calling Validate");
 
             if (string.IsNullOrEmpty(_username) || string.IsNullOrEmpty(_password) || string.IsNullOrEmpty(_email))
             {
@@ -65,14 +64,14 @@ namespace BlazorGuiServer.Data.Management.Services.ServiceHelpers
                 return Result.Fail(new Error("Username, password or email is null"));
             }
 
-            if(this._context.Users.Any(x => x.Username == this._username))
+            if (_context.Users.Any(x => x.Username == _username))
             {
-                _logger.LogDebug($"Username {this._username} already in use");
+                _logger.LogDebug($"Username {_username} already in use");
                 return Result.Fail(new Error("Username is already in use"));
             }
-            if (this._context.Users.Any(x => x.Email == this._email))
+            if (_context.Users.Any(x => x.Email == _email))
             {
-                _logger.LogDebug($"Email {this._email} already in use");
+                _logger.LogDebug($"Email {_email} already in use");
                 return Result.Fail(new Error("Email is already in use"));
             }
 

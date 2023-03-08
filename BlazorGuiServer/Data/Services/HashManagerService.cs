@@ -1,12 +1,11 @@
-﻿using BlazorGuiServer.Data.Management.Services.ServiceHelpers;
-using Hashing;
+﻿using BlazorGuiServer.Data.Services.Helpers;
+using BlazorGuiServer.Data.Services.Managers;
 using System.Security.Cryptography;
 
-namespace BlazorGuiServer.Data.Management.Services
+namespace BlazorGuiServer.Data.Services
 {
-    public class CryptographicSecurityService
+    public class HashManagerService
     {
-
         public string GenerateHash(string hmacName, byte[] key, string text)
         {
             HmacManager macManager = new HmacManager();
@@ -22,15 +21,6 @@ namespace BlazorGuiServer.Data.Management.Services
         {
             HmacManager macManager = new HmacManager();
             return macManager.GetSupportedHmacs();
-        }
-        public string CreateSalt()
-        {
-            return Convert.ToBase64String(new KeyManager().CreateKey());
-        }
-        public string CreateHashForPassword(string password, string salt)
-        {
-            Hasher hasher = new Hasher();
-            return hasher.Hash(SHA256.Create(), password + salt, 20000);
         }
     }
 }

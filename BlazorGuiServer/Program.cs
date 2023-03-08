@@ -1,5 +1,5 @@
-using BlazorGuiServer.Data.Management.Services;
 using BlazorGuiServer.Data.Repository.Model;
+using BlazorGuiServer.Data.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
@@ -23,6 +23,8 @@ namespace BlazorGuiServer
 
             builder.Services.AddSingleton<CryptographicSecurityService>();
             builder.Services.AddSingleton<LoginManagerService>();
+            builder.Services.AddSingleton<HashManagerService>();
+            builder.Services.AddSingleton<SymmetricAlgorithmsManagerService>();
             builder.Services.AddSingleton<SecurePasswordDbContext>();
 
             var app = builder.Build();

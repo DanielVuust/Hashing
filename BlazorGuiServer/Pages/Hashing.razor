@@ -1,7 +1,7 @@
 ﻿@page "/hashing"
-@using BlazorGuiServer.Data.Management.Services
-@using global::Hashing
-@inject CryptographicSecurityService CryptographicSecurityService
+@using BlazorGuiServer.Data.Services
+@using BlazorGuiServer.Data.Services.Managers
+@inject HashManagerService HashManagerService
 
 <h3>Hashing</h3>
 <p>
@@ -40,7 +40,7 @@
 
     protected override void OnInitialized()
     {
-        supportedHmacs = CryptographicSecurityService.GetSupportedHmacs();
+        supportedHmacs = HashManagerService.GetSupportedHmacs();
     }
     private void GenerateNewRandomKey()
     {
@@ -52,7 +52,7 @@
 
     private void GenerateHash()
     {
-        this.hash = CryptographicSecurityService.GenerateHash(this.selectedHmac, this.key, this.text);
+        this.hash = HashManagerService.GenerateHash(this.selectedHmac, this.key, this.text);
     
         StateHasChanged();
     }

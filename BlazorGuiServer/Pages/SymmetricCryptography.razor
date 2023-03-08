@@ -1,0 +1,66 @@
+﻿@page "/symmetricCryptography"
+@using BlazorGuiServer.Data.Services
+@using BlazorGuiServer.Data.Services.Managers
+
+@inject SymmetricAlgorithmsManagerService SymmetricAlgorithmsManagerService
+
+<button @onclick="GenerateKey">GenerateKey</button> <p>Key: @Convert.ToBase64String(Key);</p><br/>
+<button @onclick="GenerateIv">GenerateIv</button> <p>Iv: @Convert.ToBase64String(Iv)</p><br/>
+
+<p>Text to encrypt</p> <input placeholder="Enter your text" @bind="@TextToEncrypt" />
+
+<select class="form-control" @bind="@SelectedSymmetricAlgorithm" style="width:150px">
+    @foreach (var template in SupportedSymmetricAlgorithms)
+    {
+        <option value=@template>@template</option>
+    }
+</select>
+
+<br/>
+
+<button @onclick="@EncryptText">Encrypt text</button>
+<p>@Convert.ToBase64String(EncryptedBytes)</p>
+
+<br/>
+<button @onclick="@DecryptText">Decrypt text</button>
+<p>@DecryptedText</p>
+@code {
+    protected List<string> SupportedSymmetricAlgorithms;
+    protected string SelectedSymmetricAlgorithm;
+    protected byte[] Key = Array.Empty<byte>();
+    protected byte[] Iv = Array.Empty<byte>();
+    protected string TextToEncrypt = "";
+    protected byte[] EncryptedBytes = Array.Empty<byte>();
+    protected string DecryptedText = "";
+
+
+    protected override void OnInitialized()
+    {
+        SupportedSymmetricAlgorithms = SymmetricAlgorithmsManagerService.GetSupportedSymmetricAlgorithms();
+        SelectedSymmetricAlgorithm = SupportedSymmetricAlgorithms.First();
+        StateHasChanged();
+    }
+    protected void GenerateKey()
+    {
+        KeyManager keyManager = new KeyManager();
+        Key = keyManager.CreateKey(8);
+
+        StateHasChanged();
+    }
+    protected void GenerateIv()
+    {
+        KeyManager keyManager = new KeyManager();
+        Iv = keyManager.CreateKey(8);
+
+        StateHasChanged();
+    }
+
+    protected void EncryptText()
+    {
+        this.EncryptedBytes = SymmetricAlgorithmsManagerService.EncryptMessage(this.TextToEncrypt, this.Key, this.Iv, this.SelectedSymmetricAlgorithm).Value;
+    }
+    protected void DecryptText()
+    {
+        this.DecryptedText = SymmetricAlgorithmsManagerService.DecryptEncryptedMessage(this.EncryptedBytes, this.Key, this.Iv, this.SelectedSymmetricAlgorithm).Value;
+    }
+}
