@@ -1,0 +1,29 @@
+﻿@page "/rsaReceiver"
+@using BlazorGuiServer.Data.Services
+
+@inject RsaReceiverService RsaReceiverService
+<button @onclick="@GenerateRasKey">
+    test
+</button>
+
+<br/>
+
+<p>@Convert.ToBase64String(RsaPublicKey)</p>
+
+<br/>
+
+<p>@Convert.ToBase64String(RsaPrivateKey)</p>
+@code{
+    protected byte[] RsaPrivateKey = Array.Empty<byte>();
+    protected byte[] RsaPublicKey = Array.Empty<byte>();
+
+    protected void GenerateRasKey()
+    {
+        var key = RsaReceiverService.GenerateRasKey().Value;
+
+        RsaPrivateKey = key.PrivateKey;
+        RsaPublicKey = key.PublicKey;
+
+        StateHasChanged();
+    }
+}

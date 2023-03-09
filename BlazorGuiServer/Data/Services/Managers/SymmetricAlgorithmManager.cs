@@ -4,34 +4,30 @@ namespace BlazorGuiServer.Data.Services.Managers
 {
     public class SymmetricAlgorithmManager
     {
-        private readonly List<string> supportedAlgorithms = new List<string>()
+        private readonly List<string> _supportedAlgorithms = new()
         {
             "DES",
             "3DES",
-            "SHA256",
-            "SHA384",
-            "SHA512",
+            "AES",
         };
-        public SymmetricAlgorithm SelectSymmetricAlgorithmManager(string SymmetricAlgorithmName)
+        public SymmetricAlgorithm SelectSymmetricAlgorithmManager(string symmetricAlgorithmName)
         {
-            if (SymmetricAlgorithmName == "DES")
+            switch (symmetricAlgorithmName)
             {
-                return DES.Create();
+                case "DES":
+                    return (SymmetricAlgorithm)DES.Create();
+                case "3DES":
+                    return TripleDES.Create();
+                case "AES":
+                    return Aes.Create();
+                default:
+                    throw new NotSupportedException($"{symmetricAlgorithmName} is not supported");
             }
-            if (SymmetricAlgorithmName == "3DES")
-            {
-                return TripleDES.Create();
-            }
-            if (SymmetricAlgorithmName == "Rijndael")
-            {
-                return Rijndael.Create();
-            }
-            throw new NotSupportedException($"{SymmetricAlgorithmName} is not supported");
         }
 
         public List<string> GetSupportedAlgorithms()
         {
-            return supportedAlgorithms;
+            return _supportedAlgorithms;
         }
     }
 }

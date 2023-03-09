@@ -26,6 +26,7 @@ namespace BlazorGuiServer
             builder.Services.AddSingleton<HashManagerService>();
             builder.Services.AddSingleton<SymmetricAlgorithmsManagerService>();
             builder.Services.AddSingleton<SecurePasswordDbContext>();
+            builder.Services.AddSingleton<RsaReceiverService>();
 
             var app = builder.Build();
 

@@ -1,4 +1,5 @@
-﻿using BlazorGuiServer.Data.Services.Helpers;
+﻿using BlazorGuiServer.Data.Repository.Dto;
+using BlazorGuiServer.Data.Services.Helpers;
 using BlazorGuiServer.Data.Services.Managers;
 using FluentResults;
 
@@ -8,19 +9,29 @@ namespace BlazorGuiServer.Data.Services
     {
         public List<string> GetSupportedSymmetricAlgorithms()
         {
-            SymmetricAlgorithmManager symmetricAlgorithmManager = new SymmetricAlgorithmManager();
+            SymmetricAlgorithmManager symmetricAlgorithmManager = new();
             return symmetricAlgorithmManager.GetSupportedAlgorithms();
         }
 
-        public Result<byte[]> EncryptMessage(string message, byte[] key, byte[] iv, string selectedEncryption)
+        public Result<EncryptedMessageDto> EncryptMessage(string message, string selectedEncryption)
         {
             SymmetricAlgorithmManager manager = new SymmetricAlgorithmManager();
             var algo = manager.SelectSymmetricAlgorithmManager(selectedEncryption);
 
+            algo.GenerateIV();
+            algo.GenerateKey();
+
+            EncryptedMessageDto dto = new EncryptedMessageDto
+            {
+                EncryptionKey = algo.Key,
+                EncryptionIv = algo.IV
+            };
+
             Encrypter encrypter = new Encrypter();
 
-            Result<byte[]> encryptedText = encrypter.Encrypt(algo, message, key, iv);
-            return Result.Ok(encryptedText.Value);
+            Result<byte[]> encryptedText = encrypter.Encrypt(algo, message);
+            dto.EncryptedMessage = encryptedText.Value;
+            return Result.Ok(dto);
         }
         public Result<string> DecryptEncryptedMessage(byte[] encryptedMessage, byte[] key, byte[] iv, string selectedEncryption)
         {

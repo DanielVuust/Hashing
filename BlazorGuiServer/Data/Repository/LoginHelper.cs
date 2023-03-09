@@ -1,6 +1,5 @@
 ﻿using BlazorGuiServer.Data.Repository.Model;
 using FluentResults;
-using HashingDomain;
 using HashingDomain.Model;
 
 namespace BlazorGuiServer.Data.Repository

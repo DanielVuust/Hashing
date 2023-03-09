@@ -6,22 +6,13 @@ namespace BlazorGuiServer.Data.Services.Helpers
 {
     public class Encrypter
     {
-        public Result<byte[]> Encrypt(SymmetricAlgorithm algorithm, string message, byte[] key, byte[] iv)
+        public Result<byte[]> Encrypt(SymmetricAlgorithm algorithm, string message)
         {
             byte[] array = new byte[64];
             using (var s = algorithm)
             {
-                try
-                {
-                    s.Padding = PaddingMode.PKCS7;
-
-                    s.Key = key;
-                    s.IV = iv;
-                }
-                catch (Exception ex)
-                {
-
-                }
+                s.Padding = PaddingMode.PKCS7;
+                    
                 ICryptoTransform encryptor = s.CreateEncryptor(s.Key, s.IV);
 
                 using (MemoryStream memoryStream = new MemoryStream())

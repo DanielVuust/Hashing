@@ -1,13 +1,15 @@
 ﻿@page "/symmetricCryptography"
 @using BlazorGuiServer.Data.Services
 @using BlazorGuiServer.Data.Services.Managers
+@using System.Text
 
 @inject SymmetricAlgorithmsManagerService SymmetricAlgorithmsManagerService
 
-<button @onclick="GenerateKey">GenerateKey</button> <p>Key: @Convert.ToBase64String(Key);</p><br/>
-<button @onclick="GenerateIv">GenerateIv</button> <p>Iv: @Convert.ToBase64String(Iv)</p><br/>
+<p>Key: @Convert.ToBase64String(Key);</p><br/>
+<p>Iv: @Convert.ToBase64String(Iv)</p><br/>
 
 <p>Text to encrypt</p> <input placeholder="Enter your text" @bind="@TextToEncrypt" />
+<br/>
 
 <select class="form-control" @bind="@SelectedSymmetricAlgorithm" style="width:150px">
     @foreach (var template in SupportedSymmetricAlgorithms)
@@ -19,14 +21,19 @@
 <br/>
 
 <button @onclick="@EncryptText">Encrypt text</button>
-<p>@Convert.ToBase64String(EncryptedBytes)</p>
+<p>Cyphertext:</p><br/>
+<p>Base64: @Convert.ToBase64String(EncryptedBytes)</p><br/>
+<p>Hex: @Convert.ToHexString(EncryptedBytes)</p>
 
 <br/>
 <button @onclick="@DecryptText">Decrypt text</button>
-<p>@DecryptedText</p>
+<p>Decrypted text:</p>
+<br />
+<p>Text: @DecryptedText</p><br/>
+<p>Hex: @Convert.ToHexString(Encoding.Unicode.GetBytes(DecryptedText))</p>
 @code {
-    protected List<string> SupportedSymmetricAlgorithms;
-    protected string SelectedSymmetricAlgorithm;
+    protected List<string>? SupportedSymmetricAlgorithms;
+    protected string SelectedSymmetricAlgorithm = "";
     protected byte[] Key = Array.Empty<byte>();
     protected byte[] Iv = Array.Empty<byte>();
     protected string TextToEncrypt = "";
@@ -40,27 +47,15 @@
         SelectedSymmetricAlgorithm = SupportedSymmetricAlgorithms.First();
         StateHasChanged();
     }
-    protected void GenerateKey()
-    {
-        KeyManager keyManager = new KeyManager();
-        Key = keyManager.CreateKey(8);
-
-        StateHasChanged();
-    }
-    protected void GenerateIv()
-    {
-        KeyManager keyManager = new KeyManager();
-        Iv = keyManager.CreateKey(8);
-
-        StateHasChanged();
-    }
-
     protected void EncryptText()
     {
-        this.EncryptedBytes = SymmetricAlgorithmsManagerService.EncryptMessage(this.TextToEncrypt, this.Key, this.Iv, this.SelectedSymmetricAlgorithm).Value;
+        var result = SymmetricAlgorithmsManagerService.EncryptMessage(this.TextToEncrypt, this.SelectedSymmetricAlgorithm).Value;
+        Key = result.EncryptionKey;
+        Iv = result.EncryptionIv;
+        EncryptedBytes = result.EncryptedMessage;
     }
     protected void DecryptText()
     {
-        this.DecryptedText = SymmetricAlgorithmsManagerService.DecryptEncryptedMessage(this.EncryptedBytes, this.Key, this.Iv, this.SelectedSymmetricAlgorithm).Value;
+        this.DecryptedText = SymmetricAlgorithmsManagerService.DecryptEncryptedMessage(this.EncryptedBytes, this.Key, this.Iv, this.SelectedSymmetricAlgorithm).ValueOrDefault;
     }
 }

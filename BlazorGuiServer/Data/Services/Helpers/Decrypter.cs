@@ -11,16 +11,9 @@ namespace BlazorGuiServer.Data.Services.Helpers
         {
             using (var algo = algorithm)
             {
-                try
-                {
-                    algo.Padding = PaddingMode.PKCS7;
-                    algo.Key = key;
-                    algo.IV = iv;
-                }
-                catch (Exception ex)
-                {
-
-                }
+                algo.Padding = PaddingMode.PKCS7;
+                algo.Key = key;
+                algo.IV = iv;
                 ICryptoTransform decryptor = algo.CreateDecryptor(algo.Key, algo.IV);
 
                 using (MemoryStream memoryStream = new MemoryStream(message))
@@ -36,7 +29,8 @@ namespace BlazorGuiServer.Data.Services.Helpers
                             }
                             catch (Exception ex)
                             {
-                                throw ex;
+                                //TODO change
+                                return Result.Ok($"Error, ex: {ex.ToString()}");
                             }
                         }
                     }
