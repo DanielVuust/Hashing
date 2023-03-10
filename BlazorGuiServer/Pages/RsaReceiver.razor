@@ -1,5 +1,6 @@
 ﻿@page "/rsaReceiver"
 @using BlazorGuiServer.Data.Services
+@using System.Text
 
 @inject RsaReceiverService RsaReceiverService
 <button @onclick="@GenerateRasKey">
@@ -8,21 +9,40 @@
 
 <br/>
 
-<p>@Convert.ToBase64String(RsaPublicKey)</p>
 
 <br/>
 
-<p>@Convert.ToBase64String(RsaPrivateKey)</p>
+<p>@xml</p>
+
+<br />
+
+<button @onclick="@DecryptEncryptedText">
+    Decrypt
+</button>
+<input @bind="EncryptedText"/>
+<p>@Encoding.UTF8.GetString(DecryptedText)</p>
+
 @code{
     protected byte[] RsaPrivateKey = Array.Empty<byte>();
     protected byte[] RsaPublicKey = Array.Empty<byte>();
 
+    protected string xml = "";
+
+    protected string EncryptedText = "";
+    protected byte[] DecryptedText = Array.Empty<byte>();
+
+
     protected void GenerateRasKey()
     {
-        var key = RsaReceiverService.GenerateRasKey().Value;
+        xml = RsaReceiverService.GenerateRasKey().Value;
 
-        RsaPrivateKey = key.PrivateKey;
-        RsaPublicKey = key.PublicKey;
+
+        StateHasChanged();
+    }
+    protected void DecryptEncryptedText()
+    {
+        DecryptedText = RsaReceiverService.DecryptEncryptedString(System.Convert.FromBase64String(EncryptedText), xml).Value;
+
 
         StateHasChanged();
     }
