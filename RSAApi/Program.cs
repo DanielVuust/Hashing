@@ -1,8 +1,10 @@
 using BlazorGuiServer.Data.Services;
 using Microsoft.AspNetCore.Http;
 using System;
+using System.Net.Mime;
 using System.Security.Cryptography;
 using System.Text;
+using FluentResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace RSAApi
@@ -21,6 +23,7 @@ namespace RSAApi
             builder.Services.AddSwaggerGen();
             builder.Services.AddSingleton<RsaReceiverService>();
             builder.Services.AddSingleton<RsaSenderService>();
+            builder.Services.AddSingleton<VigenereCipherService>();
             builder.Services.AddSession();
             builder.Services.AddDistributedMemoryCache();
             
@@ -56,63 +59,33 @@ namespace RSAApi
             })
             .WithName("GetWeatherForecast");
 
-            app.MapGet("/rsaReceiver/CreateRsaKey", (HttpContext httpContext, RsaReceiverService service) =>
-            {
-                RSA rsaKey = null;
-                try
-                {
-                    var result = service.GenerateRasKey2();
-                    if (result.IsFailed)
-                    {
-                        throw new Exception(result.Errors.ToString());
-                    }
-
-                    rsaKey = result.Value;
-                    httpContext.Session.SetString("rsaXmlString", rsaKey.ToXmlString(true));
-
-                    //Only show user public parameters.
-                    return Results.Ok(rsaKey.ToXmlString(false));
-
-                }
-                catch (Exception ex)
-                {
-                    //TODO Add logging.
-                    return Results.Problem(ex.ToString());
-                }
-                finally
-                {
-                    rsaKey?.Dispose();
-                }
-            });
-            app.MapGet("/rsaReceiver/DecryptRsaEncryptedText", (HttpContext httpContext, RsaReceiverService service, 
-                string encryptedText) =>
-            {
-                var rsaXmlString = httpContext.Session.GetString("rsaXmlString");
-                if (rsaXmlString == null)
-                {
-                    return Results.BadRequest("rsaXmlString not set");
-                }
-                var xmlKey = service.DecryptEncryptedString(Convert.FromBase64String(encryptedText), rsaXmlString);
+            
 
 
-                return Results.Ok(Encoding.ASCII.GetString(xmlKey.Value));
-            });
-            app.MapPost("/rsaSender/EncryptTextUsingPublicRsaKey", (HttpContext httpContext, RsaSenderService service,
-                [FromBody] RsaEncryptionDTO dto) =>
-            {
-                var xmlKey = service.EncryptUsingRsaPublicKey(dto.RsaXmlString, dto.TextToEncrypt);
-
-
-                return Results.Ok(Convert.ToBase64String(xmlKey.Value));
-            });
+            app.MapRsaSenderEndpoints();
+            app.MapRsaReceiverEndpoints();
+            app.MapVigenereCipherEndpoints();
 
             app.Run();
         }
         
     }
 
-    public class RsaEncryptionDTO
+    public class RsaEncryptionDTO : IDto
     {
+        public Result<bool> Validate()
+        {
+            if (string.IsNullOrEmpty(TextToEncrypt))
+            {
+                return Result.Fail("TextToEncrypt not valid");
+            }
+            if (string.IsNullOrEmpty(RsaXmlString))
+            {
+                return Result.Fail("RsaXmlString not valid");
+            }
+
+            return Result.Ok();
+        }
         public string TextToEncrypt { get; set; }
         public string RsaXmlString { get; set; }
 

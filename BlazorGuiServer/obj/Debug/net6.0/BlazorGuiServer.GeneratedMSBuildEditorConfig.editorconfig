@@ -9,73 +9,65 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BlazorGuiServer
 build_property.RootNamespace = BlazorGuiServer
-build_property.ProjectDir = C:\Users\danie\source\repos\C#\Kryptering\Hashing\BlazorGuiServer\
+build_property.ProjectDir = C:\Users\davu\source\repos\Skole\H3\Kryptering\Hashing\BlazorGuiServer\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\danie\source\repos\C#\Kryptering\Hashing\BlazorGuiServer
+build_property.MSBuildProjectDirectory = C:\Users\davu\source\repos\Skole\H3\Kryptering\Hashing\BlazorGuiServer
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/danie/source/repos/C\#/Kryptering/Hashing/BlazorGuiServer/App.razor]
+[C:/Users/davu/source/repos/Skole/H3/Kryptering/Hashing/BlazorGuiServer/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/source/repos/C\#/Kryptering/Hashing/BlazorGuiServer/Pages/Counter.razor]
+[C:/Users/davu/source/repos/Skole/H3/Kryptering/Hashing/BlazorGuiServer/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/source/repos/C\#/Kryptering/Hashing/BlazorGuiServer/Pages/Hashing.razor]
+[C:/Users/davu/source/repos/Skole/H3/Kryptering/Hashing/BlazorGuiServer/Pages/Hashing.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGFzaGluZy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/source/repos/C\#/Kryptering/Hashing/BlazorGuiServer/Pages/Index.razor]
+[C:/Users/davu/source/repos/Skole/H3/Kryptering/Hashing/BlazorGuiServer/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/source/repos/C\#/Kryptering/Hashing/BlazorGuiServer/Pages/Login.razor]
+[C:/Users/davu/source/repos/Skole/H3/Kryptering/Hashing/BlazorGuiServer/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/source/repos/C\#/Kryptering/Hashing/BlazorGuiServer/Pages/RsaReceiver.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUnNhUmVjZWl2ZXIucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/danie/source/repos/C\#/Kryptering/Hashing/BlazorGuiServer/Pages/RsaSender.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUnNhU2VuZGVyLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/danie/source/repos/C\#/Kryptering/Hashing/BlazorGuiServer/Pages/SignUp.razor]
+[C:/Users/davu/source/repos/Skole/H3/Kryptering/Hashing/BlazorGuiServer/Pages/SignUp.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnblVwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/source/repos/C\#/Kryptering/Hashing/BlazorGuiServer/Pages/SymmetricCryptography.razor]
+[C:/Users/davu/source/repos/Skole/H3/Kryptering/Hashing/BlazorGuiServer/Pages/SymmetricCryptography.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3ltbWV0cmljQ3J5cHRvZ3JhcGh5LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/source/repos/C\#/Kryptering/Hashing/BlazorGuiServer/Shared/SurveyPrompt.razor]
+[C:/Users/davu/source/repos/Skole/H3/Kryptering/Hashing/BlazorGuiServer/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/source/repos/C\#/Kryptering/Hashing/BlazorGuiServer/_Imports.razor]
+[C:/Users/davu/source/repos/Skole/H3/Kryptering/Hashing/BlazorGuiServer/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/source/repos/C\#/Kryptering/Hashing/BlazorGuiServer/Shared/MainLayout.razor]
+[C:/Users/davu/source/repos/Skole/H3/Kryptering/Hashing/BlazorGuiServer/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-kdwhk7xin9
 
-[C:/Users/danie/source/repos/C\#/Kryptering/Hashing/BlazorGuiServer/Shared/NavMenu.razor]
+[C:/Users/davu/source/repos/Skole/H3/Kryptering/Hashing/BlazorGuiServer/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-ggnmnjqjow
 
-[C:/Users/danie/source/repos/C\#/Kryptering/Hashing/BlazorGuiServer/Pages/Error.cshtml]
+[C:/Users/davu/source/repos/Skole/H3/Kryptering/Hashing/BlazorGuiServer/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/source/repos/C\#/Kryptering/Hashing/BlazorGuiServer/Pages/_Host.cshtml]
+[C:/Users/davu/source/repos/Skole/H3/Kryptering/Hashing/BlazorGuiServer/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/source/repos/C\#/Kryptering/Hashing/BlazorGuiServer/Pages/_Layout.cshtml]
+[C:/Users/davu/source/repos/Skole/H3/Kryptering/Hashing/BlazorGuiServer/Pages/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

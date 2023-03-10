@@ -1,42 +1,65 @@
-﻿using System.Globalization;
-using System.Security.Cryptography;
-using System.Text;
-using BlazorGuiServer.Data.Repository.Dto;
+﻿using System.Security.Cryptography;
 using FluentResults;
 
 namespace BlazorGuiServer.Data.Services
 {
     public class RsaReceiverService
     {
-        public Result<string> GenerateRasKey()
+        public Result<RSA?> GenerateRasKeyAndSaveInCsp(string containerName)
         {
-            GeneratedRasKey key = new();
-            using (var rsa = RSA.Create(2048))
+            var parameters = new CspParameters
             {
-                return rsa.ToXmlString(true);
-                key.PrivateKey = rsa.ExportRSAPrivateKey();
-            }
-        }
-        public Result<RSA> GenerateRasKey2()
-        {
-            return RSA.Create(2048);
-        }
-        public Result<byte[]> DecryptEncryptedString(byte[] encryptedText, string rsaXmlString)
-        {
+                KeyContainerName = containerName
+            };
             try
             {
-                RSACryptoServiceProvider rsa2 = new RSACryptoServiceProvider(2048);
-                using (var rsa = rsa2)
-                {
-                    rsa.FromXmlString(rsaXmlString);
-                    return rsa.Decrypt(encryptedText, false);
-
-                }
+                return Result.Ok((RSA)new RSACryptoServiceProvider(2048, parameters));
             }
             catch (Exception ex)
             {
-                throw ex;
+                //TODO Add logging.
+                return Result.Fail(ex.ToString());
             }
+        }
+        public Result<byte[]> DecryptEncryptedString(byte[] encryptedText, string containerName)
+        {
+            var parameters = new CspParameters
+            {
+                KeyContainerName = containerName,
+            };
+
+            try
+            {
+                RSACryptoServiceProvider rsa = new RSACryptoServiceProvider(2048,parameters);
+                return rsa.Decrypt(encryptedText, false);
+            }
+            catch (Exception ex)
+            {
+                //TODO Add logging.
+                return Result.Fail(ex.ToString());
+            }
+        }
+
+        public Result ClearKeyFromCsp(string containerName)
+        {
+            var parameters = new CspParameters
+            {
+                KeyContainerName = containerName
+            };
+
+            try
+            {
+                using var rsa = new RSACryptoServiceProvider(parameters)
+                {
+                    PersistKeyInCsp = false
+                };
+                rsa.Clear();
+            }
+            catch (Exception ex)
+            {
+                return Result.Fail(ex.ToString());
+            }
+            return Result.Ok();
         }
     }
 }

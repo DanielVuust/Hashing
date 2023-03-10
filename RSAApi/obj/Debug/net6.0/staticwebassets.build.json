@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "Oe6cn2FaIxXwBqeyp1C4Ge6qafa2pGv9HMPTfPLbvgw=",
+  "Hash": "czHuTnQBgQVPdIkkqu7nBWvioX/lE9k9+3bgMecdxTE=",
   "Source": "RSAApi",
   "BasePath": "_content/RSAApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\BlazorGuiServer.csproj",
+      "Identity": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\BlazorGuiServer.csproj",
       "Version": 2,
       "Source": "BlazorGuiServer",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
@@ -22,17 +22,17 @@
     {
       "Name": "BlazorGuiServer\\wwwroot",
       "Source": "BlazorGuiServer",
-      "ContentRoot": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
       "BasePath": "_content/BlazorGuiServer",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BlazorGuiServer.bundle.scp.css",
+      "Identity": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BlazorGuiServer.bundle.scp.css",
       "SourceId": "BlazorGuiServer",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/BlazorGuiServer",
       "RelativePath": "BlazorGuiServer.bundle.scp.css",
       "AssetKind": "All",
@@ -43,13 +43,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BlazorGuiServer.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BlazorGuiServer.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "BlazorGuiServer",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
       "BasePath": "_content/BlazorGuiServer",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -63,10 +63,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "BlazorGuiServer",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
       "BasePath": "_content/BlazorGuiServer",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -80,10 +80,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "BlazorGuiServer",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
       "BasePath": "_content/BlazorGuiServer",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -97,10 +97,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Identity": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "SourceId": "BlazorGuiServer",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
       "BasePath": "_content/BlazorGuiServer",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -114,10 +114,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Identity": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Identity": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "SourceId": "BlazorGuiServer",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
       "BasePath": "_content/BlazorGuiServer",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Identity": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Identity": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "SourceId": "BlazorGuiServer",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
       "BasePath": "_content/BlazorGuiServer",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -148,10 +148,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Identity": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Identity": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "SourceId": "BlazorGuiServer",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
       "BasePath": "_content/BlazorGuiServer",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -165,10 +165,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Identity": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Identity": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "SourceId": "BlazorGuiServer",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
       "BasePath": "_content/BlazorGuiServer",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -182,10 +182,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Identity": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Identity": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "BlazorGuiServer",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
       "BasePath": "_content/BlazorGuiServer",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -199,10 +199,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "SourceId": "BlazorGuiServer",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
       "BasePath": "_content/BlazorGuiServer",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -216,10 +216,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "BlazorGuiServer",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
       "BasePath": "_content/BlazorGuiServer",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -233,10 +233,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\css\\site.css",
       "SourceId": "BlazorGuiServer",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
       "BasePath": "_content/BlazorGuiServer",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -250,10 +250,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\favicon.ico",
       "SourceId": "BlazorGuiServer",
       "SourceType": "Project",
-      "ContentRoot": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\BlazorGuiServer\\wwwroot\\",
       "BasePath": "_content/BlazorGuiServer",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -267,10 +267,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\RSAApi\\obj\\Debug\\net6.0\\scopedcss\\bundle\\RSAApi.styles.css",
+      "Identity": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\RSAApi\\obj\\Debug\\net6.0\\scopedcss\\bundle\\RSAApi.styles.css",
       "SourceId": "RSAApi",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\RSAApi\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\RSAApi\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/RSAApi",
       "RelativePath": "RSAApi.styles.css",
       "AssetKind": "All",
@@ -281,7 +281,7 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\danie\\source\\repos\\C#\\Kryptering\\Hashing\\RSAApi\\obj\\Debug\\net6.0\\scopedcss\\bundle\\RSAApi.styles.css"
+      "OriginalItemSpec": "C:\\Users\\davu\\source\\repos\\Skole\\H3\\Kryptering\\Hashing\\RSAApi\\obj\\Debug\\net6.0\\scopedcss\\bundle\\RSAApi.styles.css"
     }
   ]
 }
